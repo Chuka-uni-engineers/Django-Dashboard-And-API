@@ -1,0 +1,53 @@
+{
+    "route": "api/home",
+    "method": "GET",
+    "description": "Get news and project objects for the home page.",
+    "responseFormat": {
+      "news": [
+        {
+          "id": 1,
+          "headlines": "Breaking News 1",
+          "details": "Lorem ipsum dolor sit amet...",
+          "date": "2023-11-14T12:30:00Z",
+          "created_by ":{
+            "id":1,
+            "name":"John",
+            "image":"example.png",
+            "online_status": true
+          }
+        }
+      ],
+      "Events": [
+        {
+          "id": 1,
+          "name": "Breaking News 1",
+          "details": "Lorem ipsum dolor sit amet...",
+          "date": "2023-11-14T12:30:00Z",
+          "image": "image.png",
+          "created_by ":{
+            "id":1,
+            "name":"John",
+            "image":"example.png",
+            "online_status": true
+          }
+        }
+        
+      ],
+      "projects": [
+        {
+          "id": 101,
+          "name": "Project A",
+          "about": "A description of Project A...",
+          "status": "In Progress",
+          "creation_date": "2023-11-14T12:30:00Z",
+          "progress": 20,
+          "created_by ":{
+            "id":1,
+            "name":"John",
+            "image":"example.png",
+            "online_status": true
+          }
+        }
+      ]
+    }
+  }
