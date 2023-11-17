@@ -1,5 +1,100 @@
 [
     {
+        "path": "/api/v1/user_register",
+        "method": "POST",
+        "description": "Register a user",
+        "requestParameters": [],
+        "requestFormat": [
+          {
+            "name": "example name",
+            "email":"user@example.com" ,
+            "bio": "A high-end smartphone with advanced features.",
+            "profile_pic": "example.png"
+          }
+        ],
+        "possibleErrors": [
+          {
+            "condition": "user already exist",
+            "response": {
+              "message": "Try login in"
+            }
+          },
+          {
+            "condition": "Internal Server Error",
+            "response": {
+              "error": "Internal Server Error",
+              "message": "An unexpected error occurred while processing your request."
+            }
+          }
+        ],
+        "responseAfterProcessing": [
+            {
+            "message": "Registration successful. Welcome, user!"
+            }
+        ]
+      },
+
+      {
+        "path": "/api/user_login",
+        "method": "POST",
+        "description": "login for a user",
+        "requestParameters": [],
+        "requestFormat": [
+          {
+            "password": "example password",
+            "email":"user@example.com"
+          }
+        ],
+        "possibleErrors": [
+          {
+            "condition": "user does not exist",
+            "response": {
+              "message": "Try registering"
+            }
+          },
+          {
+            "condition": "Internal Server Error",
+            "response": {
+              "error": "Internal Server Error",
+              "message": "An unexpected error occurred while processing your request."
+            }
+          }
+        ],
+        "responseAfterProcessing": [
+            {
+            "message": "log in  successful. Welcome, back user!"
+            }
+        ]
+      },
+
+      {
+        "path": "/api/delete_user",
+        "method": "POST",
+        "description": "delete a user",
+        "requestParameters": [],
+        "requestFormat": [
+          {
+            "userId": 2
+          }
+        ],
+        "possibleErrors": [
+          {
+            "condition": "Internal Server Error",
+            "response": {
+              "error": "Internal Server Error",
+              "message": "An unexpected error occurred while processing your request."
+            }
+          }
+        ],
+        "responseAfterProcessing": [
+            {
+            "message": "Delete was successful. Bey, user!"
+            }
+        ]
+    },
+
+
+    {
         "route": "api/v1/project",
         "method": "GET",
         "description": "Get project details",
@@ -53,11 +148,20 @@
             }
         ]
     },
+
     {
         "route": "api/v1/home",
         "method": "GET",
-        "description": "Get news and project objects for the home page.",
+        "description": "Get news, leaders and project objects for the home page.",
         "responseFormat": {
+            "leaders": [
+                {
+                    "id": 1,
+                    "name": "example name",
+                    "role": "example role",
+                    "stack": "example tech stack"
+                }
+            ],
             "news": [
                 {
                     "id": 1,
