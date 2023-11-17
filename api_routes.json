@@ -213,10 +213,35 @@
         "route": "api/v1/user",
         "method": "GET",
         "description": "Get user detail",
+        "requestParameters": [],
         "responseFormat": {
             "id": "001",
             "username": "John",
             "email": "john@gmail.com",
+            "bio":"example bio",
+            "stack":"example tech stack",
+            "image":"example.png",
+            "online_status":true,
+            "last_seen": "2023-11-14T12:30:00Z",
+            "contact_links":[
+                {
+                   "twitter":"example twitter link",
+                   "linkedIn":"example linkedIn link"
+                }
+                
+            ]
+        }
+    },
+
+    {
+        "route": "api/v1/profile",
+        "method": "GET",
+        "description": "Get user profile",
+        "requestParameters": ["userId"],
+        "requestFormat":{
+            "user_id": 1
+        },
+        "responseFormat": {
             "projects": [
                 {
                     "id": 101,
@@ -231,6 +256,15 @@
                         "image": "example.png",
                         "online_status": true
                     }
+                }
+            ],
+            "Activities": [
+                {
+                    "id": 101,
+                    "headlines": "Activity A",
+                    "details": "A description of activity A...",
+                    "creation_date": "2023-11-14T12:30:00Z",
+                    "image":"example.png"
                 }
             ]
         }
