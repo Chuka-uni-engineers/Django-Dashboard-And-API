@@ -234,5 +234,128 @@
                 }
             ]
         }
+    },
+
+    {
+      "route": "api/v1/chat_list",
+      "method": "GET",
+      "description": "Get all users chats",
+      "requestParameters": ["userId"],
+      "requestFormat":{
+          "user_id": 1
+      },
+      "responseFormat": {
+          "direct_chats": [
+              {
+                  "id": 1
+              }
+          ],
+          "project_chats": [
+            {
+                "id": 1,
+                "project_id": 2
+            }
+        ]
+      }
+    },
+
+    {
+      "route": "api/v1/get_messages",
+      "method": "GET",
+      "description": "Get all messages from chats",
+      "requestParameters": ["chat_Id"],
+      "requestFormat":{
+          "chat_id":1,
+          "chat_type":["project_chat","direct_chat"]
+      },
+      "responseFormat": {
+          "message": [
+              {
+                  "id": 1,
+                  "send_date": "2023-11-14T12:30:00Z",
+                  "message_content": "example message"
+
+              }
+          ]
+      }
+    },
+
+    {
+      "route": "api/v1/send_messages",
+      "method": "POST",
+      "description": "send message",
+      "requestParameters":[],
+      "requestFormat":{
+          "chat_id":1,
+          "chat_type":["project_chat","direct_chat"]
+      },
+      "responseFormat": {
+          "message": [
+              {
+                  "id": 1,
+                  "send_date": "2023-11-14T12:30:00Z",
+                  "message_content": "example message"
+
+              }
+          ]
+      }
+    },
+
+
+    {
+      "route": "api/v1/refresh_messages",
+      "method": "GET",
+      "description": "refresh chat message",
+      "requestParameters":[],
+      "requestFormat":{
+          "chat_id":1,
+          "chat_type":["project_chat","direct_chat"]
+      },
+      "responseFormat": {
+          "message": [
+              {
+                  "id": 1,
+                  "send_date": "2023-11-14T12:30:00Z",
+                  "message_content": "example message"
+
+              }
+          ]
+      }
+    },
+
+    {
+      "route": "api/v1/delete_messages",
+      "method": "POST",
+      "description": "delete message",
+      "requestParameters":[],
+      "requestFormat":{
+          "chat_id":1,
+          "chat_type":["project_chat","direct_chat"],
+          "message_id":1
+      },
+      "responseFormat": {
+        "message":"message deleted"
+      }
+    },
+
+    {
+      "route": "api/v1/update_messages",
+      "method": "POST",
+      "description": "send message",
+      "requestParameters":[],
+      "requestFormat":{
+          "chat_id":1,
+          "chat_type":["project_chat","direct_chat"],
+          "message_id":1
+      },
+      "responseFormat": {
+          "message": [
+              {
+                  "id": 1,
+                  "send_date": "2023-11-14T12:30:00Z",
+                  "message_content": "example message"
+              }
+          ]
+      }
     }
 ]
