@@ -1,6 +1,4 @@
-#!/bin/sh
-'''exec' "/home/grrhrwh/Documents/chuka uni repo/Django-Dashboard-And-API/env/bin/python3" "$0" "$@"
-' '''
+#!/home/deluxe/Desktop/Django-Dashboard-And-API/env/bin/python
 # -*- coding: utf-8 -*-
 import re
 import sys
