@@ -98,6 +98,7 @@
         "route": "api/v1/project",
         "method": "GET",
         "description": "Get project details",
+        "requestParameters": ["project_id"],
         "responseFormat": {
             "id": 101,
             "name": "Project A",
@@ -112,41 +113,6 @@
                 "online_status": true
             }
         }
-    },
-    {
-        "route": "api/v1/projects",
-        "method": "GET",
-        "description": "Get project details",
-        "responseFormat": [
-            {
-                "id": 101,
-                "name": "Project A",
-                "about": "A description of Project A...",
-                "status": "In Progress",
-                "creation_date": "2023-11-14T12:30:00Z",
-                "progress": 20,
-                "created_by ": {
-                    "id": 1,
-                    "name": "John",
-                    "image": "example.png",
-                    "online_status": true
-                }
-            },
-            {
-                "id": 101,
-                "name": "Project B",
-                "about": "A description of Project B...",
-                "status": "In Progress",
-                "creation_date": "2023-11-14T12:30:00Z",
-                "progress": 20,
-                "created_by ": {
-                    "id": 1,
-                    "name": "John",
-                    "image": "example.png",
-                    "online_status": true
-                }
-            }
-        ]
     },
 
     {
