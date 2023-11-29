@@ -1,4 +1,15 @@
-env
-venv
-.vscode
-.env
+# Cache files
+*cache*
+
+# VS Code directory
+*code*
+
+# Virtual environment directory
+*env*
+
+# Log files
+*log*
+
+# Notes and test will be included in dev branch
+*notes*
+*test*
