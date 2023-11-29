@@ -357,5 +357,55 @@
               }
           ]
       }
+    },
+
+    {
+      "route": "api/v1/admin",
+      "method": "GET",
+      "description": "get information to admins page",
+      "requestParameters":[],
+      "responseFormat": {
+          "users": [
+              {
+                "count":10
+              }
+          ],
+          "projects":[
+            {
+              "count":10
+            }
+          ],
+          "completed_projects":[
+            {
+              "count":3
+            }
+          ],
+          "languages_overview":[
+            {
+              "python":1,
+              "java":2,
+              "java script":3
+            }
+          ]
+      }
+    },
+    
+    {
+      "route": "api/v1/add_project",
+      "method": "POST",
+      "description": "add a new project",
+      "requestParameters":[],
+      "requestFormat":{
+          "admin_id":1,
+          "project_name":"example project name",
+          "description":"example description"
+      },
+      "responseFormat": {
+          "message": [
+              {
+                 "message_content": "project added successful"
+              }
+          ]
+      }
     }
 ]
